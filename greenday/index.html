@@ -18,7 +18,7 @@
 <div class="card">
 
     <h1>Green Day</h1>
-    
+
     <img src="../images/GreenDay_Isle_of_Wight_Montage.jpg">
     <p>
         Green Day is an American punk rock band that was popular in the 90s and 2000s. The band consists of three members: Billie Joe Armstrong: the singer; Mike Dirnt: the bassist; Tré Cool: the drummer.
@@ -156,11 +156,22 @@
 <div id="gd-audio-player" style="position:absolute; width:1px; height:1px; opacity:0; pointer-events:none;"></div>
 
 <script>
-  // 1. Asynchronously load the YouTube IFrame API
-  var tag = document.createElement('script');
-  tag.src = "https://youtube.com";
-  var firstScriptTag = document.getElementsByTagName('script');
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  // Force the script to wait until the HTML page is fully loaded and ready
+  document.addEventListener("DOMContentLoaded", function() {
+    // 1. Asynchronously load the YouTube API code
+    var tag = document.createElement('script');
+    tag.src = "https://youtube.com";
+    
+    // Fallback search mechanism ensuring a script tag always exists to append against
+    var firstScriptTag = document.getElementsByTagName('script')[0] || document.body.appendChild(tag);
+    if (firstScriptTag !== tag) {
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
+  });
+
+  // 2. Build the player (Leave your existing YT.Player setup here exactly as it is)
+  var player;
+  function onYouTubeIframeAPIReady() {
 
   // 2. Initialize the player with your chosen video ID
   var player;
