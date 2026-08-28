@@ -44,6 +44,8 @@
         Green Day is strongly left-leaning and anti-corporate. They are anti-war, as voiced in American Idiot, and anti-trump. They even changed lyrics in their song American Idiot to mock the MAGA (make America great again) agenda. They target conservative politics, fascism, and nationalism in their concerts.
     </p>
 
+    <iframe width="560" height="315" src="https://youtube.com" title="Green Day - American Idiot" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 </div>
 
 <div class="card" id="albums">
@@ -152,56 +154,5 @@
 <a href="../comparison/index.html">Comparison</a>
 
 </nav>
-<!-- Invisible container for the Green Day video -->
-<div id="gd-audio-player" style="position:absolute; width:1px; height:1px; opacity:0; pointer-events:none;"></div>
-
-<script>
-  // Force the script to wait until the HTML page is fully loaded and ready
-  document.addEventListener("DOMContentLoaded", function() {
-    // 1. Asynchronously load the YouTube API code
-    var tag = document.createElement('script');
-    tag.src = "https://youtube.com";
-    
-    // Fallback search mechanism ensuring a script tag always exists to append against
-    var firstScriptTag = document.getElementsByTagName('script')[0] || document.body.appendChild(tag);
-    if (firstScriptTag !== tag) {
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    }
-  });
-
-  // 2. Build the player (Leave your existing YT.Player setup here exactly as it is)
-  var player;
-  function onYouTubeIframeAPIReady() {
-
-  // 2. Initialize the player with your chosen video ID
-  var player;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('gd-audio-player', {
-      videoId: '1YTR8YcQ0W0', // Uses your exact requested clean video
-      playerVars: {
-        'autoplay': 1,
-        'loop': 1,
-        'playlist': '1YTR8YcQ0W0', // Required for looping a single video
-        'controls': 0
-      },
-      events: {
-        'onReady': onPlayerReady
-      }
-    });
-  }
-
-  // 3. Control volume and play on first click
-  function onPlayerReady(event) {
-    player.setVolume(10); // Sets volume to a quiet 10%
-    
-    // Web browsers block audio from playing without user interaction first.
-    // This starts the quiet track the exact moment a visitor clicks anywhere on your page.
-    document.body.addEventListener('click', function() {
-      player.playVideo();
-    }, { once: true });
-  }
-</script>
-
-
 </body>
 </html>
