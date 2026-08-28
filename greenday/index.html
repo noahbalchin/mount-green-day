@@ -18,7 +18,8 @@
 <div class="card">
 
     <h1>Green Day</h1>
-
+    
+    <img src="../images/GreenDay_Isle_of_Wight_Montage.jpg">
     <p>
         Green Day is an American punk rock band that was popular in the 90s and 2000s. The band consists of three members: Billie Joe Armstrong: the singer; Mike Dirnt: the bassist; Tré Cool: the drummer.
     </p>
@@ -151,6 +152,45 @@
 <a href="../comparison/index.html">Comparison</a>
 
 </nav>
+<!-- Invisible container for the Green Day video -->
+<div id="gd-audio-player" style="position:absolute; width:1px; height:1px; opacity:0; pointer-events:none;"></div>
+
+<script>
+  // 1. Asynchronously load the YouTube IFrame API
+  var tag = document.createElement('script');
+  tag.src = "https://youtube.com";
+  var firstScriptTag = document.getElementsByTagName('script');
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // 2. Initialize the player with your chosen video ID
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('gd-audio-player', {
+      videoId: '1YTR8YcQ0W0', // Uses your exact requested clean video
+      playerVars: {
+        'autoplay': 1,
+        'loop': 1,
+        'playlist': '1YTR8YcQ0W0', // Required for looping a single video
+        'controls': 0
+      },
+      events: {
+        'onReady': onPlayerReady
+      }
+    });
+  }
+
+  // 3. Control volume and play on first click
+  function onPlayerReady(event) {
+    player.setVolume(10); // Sets volume to a quiet 10%
+    
+    // Web browsers block audio from playing without user interaction first.
+    // This starts the quiet track the exact moment a visitor clicks anywhere on your page.
+    document.body.addEventListener('click', function() {
+      player.playVideo();
+    }, { once: true });
+  }
+</script>
+
 
 </body>
 </html>
