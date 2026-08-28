@@ -1,0 +1,534 @@
+/* =========================================
+   MOUNT GREEN DAY
+   Modern Blue / Purple Glass Design
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+:root {
+    --blue: #4f7cff;
+    --blue-dark: #3156d8;
+    --purple: #8159e8;
+
+    --background: #f5f8ff;
+
+    --heading: #20264a;
+    --text: #505a73;
+    --muted: #7d879e;
+
+    --border: rgba(255, 255, 255, 0.8);
+
+    --shadow:
+        0 20px 60px rgba(67, 91, 180, 0.12);
+
+    --shadow-hover:
+        0 25px 70px rgba(67, 91, 180, 0.20);
+}
+
+
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(108, 145, 255, 0.18),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(139, 92, 246, 0.14),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(80, 130, 255, 0.12),
+            transparent 35%
+        ),
+
+        var(--background);
+
+    color: var(--text);
+
+    font-family: "Inter", Arial, sans-serif;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+main {
+    width: min(850px, 90%);
+
+    margin: 0 auto;
+
+    padding-bottom: 130px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   HEADINGS
+   ========================================= */
+
+h1 {
+    position: relative;
+
+    margin: 0 auto 25px;
+
+    max-width: 900px;
+
+    font-size: clamp(3rem, 7vw, 5.5rem);
+
+    font-weight: 800;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.055em;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3156d8,
+            #7354df,
+            #4f7cff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+h2 {
+    margin: 0 auto 20px;
+
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.035em;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3156d8,
+            #8159e8
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================
+   PARAGRAPHS
+   ========================================= */
+
+p {
+    max-width: 720px;
+
+    margin: 0 auto 10px;
+
+    color: var(--text);
+
+    font-size: 1rem;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================
+   GLASS CARDS
+   ========================================= */
+
+.card {
+    position: relative;
+
+    max-width: 800px;
+
+    margin: 35px auto;
+
+    padding: 45px 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.88),
+            rgba(245, 248, 255, 0.72)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 28px;
+
+    box-shadow: var(--shadow);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+.card h2 {
+    margin-top: 0;
+}
+
+
+/* =========================================
+   BOTTOM NAVIGATION
+   ========================================= */
+
+.bottom-nav {
+    position: fixed;
+
+    bottom: 22px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    width: max-content;
+
+    max-width: 90%;
+
+    padding: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 45px rgba(67, 91, 180, 0.18);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+
+.bottom-nav a {
+    padding: 10px 16px;
+
+    color: #39425d;
+
+    border-radius: 14px;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.bottom-nav a:hover {
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--purple)
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(79, 124, 255, 0.25);
+}
+
+
+/* =========================================
+   LINKS
+   ========================================= */
+
+a {
+    color: var(--blue);
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+a:hover {
+    color: var(--purple);
+
+    text-decoration: underline;
+}
+
+
+/* Keep bottom navigation links clean */
+
+.bottom-nav a:hover {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 15px 6px;
+
+    padding: 13px 28px;
+
+    min-width: 150px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--purple)
+        );
+
+    color: white;
+
+    border: none;
+
+    border-radius: 14px;
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 10px 25px rgba(79, 124, 255, 0.28);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.button:hover {
+    color: white;
+
+    text-decoration: none;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(79, 124, 255, 0.35);
+}
+
+
+/* =========================================
+   IMAGES
+   ========================================= */
+
+img {
+    display: block;
+
+    max-width: 100%;
+
+    height: auto;
+
+    margin: 30px auto;
+
+    border-radius: 24px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.hero-image {
+    width: 100%;
+
+    max-height: 550px;
+
+    object-fit: cover;
+
+    border-radius: 30px;
+}
+
+
+/* =========================================
+   SECTIONS
+   ========================================= */
+
+section {
+    margin: 45px auto;
+
+    padding: 45px 30px;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 15px 45px rgba(80, 110, 180, 0.07);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    margin-top: 100px;
+
+    padding: 55px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf3ff,
+            #f5f0ff
+        );
+
+    border-top:
+        1px solid rgba(180, 195, 230, 0.35);
+
+    color: var(--muted);
+
+    text-align: center;
+}
+
+
+footer p {
+    color: var(--muted);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    main {
+        width: 88%;
+
+        padding-bottom: 110px;
+    }
+
+
+    h1 {
+        font-size: clamp(2.7rem, 12vw, 4rem);
+    }
+
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+
+    p {
+        font-size: 0.95rem;
+    }
+
+
+    .card {
+        padding: 30px 22px;
+
+        border-radius: 22px;
+
+        margin: 25px auto;
+    }
+
+
+    .bottom-nav {
+        bottom: 12px;
+
+        width: 94%;
+
+        max-width: 94%;
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        border-radius: 18px;
+    }
+
+
+    .bottom-nav a {
+        flex-shrink: 0;
+
+        padding: 9px 13px;
+
+        font-size: 0.75rem;
+    }
+}
